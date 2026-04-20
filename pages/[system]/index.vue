@@ -118,6 +118,22 @@
           </div>
         </template>
 
+        <!-- LogVerde tabs -->
+        <template v-else-if="isLogVerde">
+          <div v-show="activeTab === 'tokens'" class="ds-section-group">
+            <DsLogverdeLvColorPalette />
+          </div>
+          <div v-show="activeTab === 'components'" class="ds-section-group">
+            <DsLogverdeLvButtons />
+            <DsLogverdeLvBadges />
+            <DsLogverdeLvInputs />
+            <DsLogverdeLvCards />
+          </div>
+          <div v-show="activeTab === 'patterns'" class="ds-section-group">
+            <DsLogverdeLvShell />
+          </div>
+        </template>
+
         <!-- Portal do Contador tabs -->
         <template v-else-if="isPortalContador">
           <div v-show="activeTab === 'tokens'" class="ds-section-group">
@@ -199,6 +215,7 @@ const isChangelog = computed(() => route.params.system === 'changelog')
 const isPortalContador = computed(() => route.params.system === 'portal-contador')
 const isViraVerde = computed(() => route.params.system === 'viraverde')
 const isSrm = computed(() => route.params.system === 'srm')
+const isLogVerde = computed(() => route.params.system === 'logverde')
 
 const sidebarCollapsed = ref(false)
 const activeTab = ref('tokens')
