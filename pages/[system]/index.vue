@@ -76,8 +76,27 @@
           </button>
         </div>
 
+        <!-- Portal do Contador tabs -->
+        <template v-if="isPortalContador">
+          <div v-show="activeTab === 'tokens'" class="ds-section-group">
+            <DsPortalContadorPcColorPalette />
+            <DsPortalContadorPcTypography />
+          </div>
+          <div v-show="activeTab === 'components'" class="ds-section-group">
+            <DsPortalContadorPcButtons />
+            <DsPortalContadorPcBadges />
+            <DsPortalContadorPcInputs />
+          </div>
+          <div v-show="activeTab === 'patterns'" class="ds-section-group">
+            <DsPortalContadorPcShell />
+            <DsPortalContadorPcTabs />
+            <DsPortalContadorPcTable />
+            <DsPortalContadorPcModal />
+          </div>
+        </template>
+
         <!-- Changelog-specific tabs -->
-        <template v-if="isChangelog">
+        <template v-else-if="isChangelog">
           <div v-show="activeTab === 'tokens'" class="ds-section-group">
             <DsChangelogCfColorPalette />
             <DsChangelogCfTypography />
@@ -97,7 +116,7 @@
         </template>
 
         <!-- Generic tabs -->
-        <template v-else>
+        <template v-else-if="true">
           <div v-show="activeTab === 'tokens'" class="ds-section-group">
             <DsColorPalette :colors="ds.colors" />
             <DsTypography :accent="ds.accent" />
@@ -135,6 +154,7 @@ const { darkMode, toggleDark } = useDesignSystem()
 
 const ds = computed(() => getDesignSystem(route.params.system as string))
 const isChangelog = computed(() => route.params.system === 'changelog')
+const isPortalContador = computed(() => route.params.system === 'portal-contador')
 
 const sidebarCollapsed = ref(false)
 const activeTab = ref('tokens')

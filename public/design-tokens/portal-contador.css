@@ -1,0 +1,123 @@
+/* ================================================================
+   Portal do Contador — Design Tokens
+   Prefixo: --pc-* (derivado do Tailwind blue/slate palette)
+   Mapeados também como --ds-* para compatibilidade com a showcase
+   ================================================================ */
+
+:root {
+  /* Tipografia */
+  --pc-font-sans: 'Inter', 'Segoe UI', sans-serif;
+  --pc-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Cores primárias (blue Tailwind) */
+  --pc-color-primary:       #2563eb; /* blue-600 */
+  --pc-color-primary-hover: #1d4ed8; /* blue-700 */
+  --pc-color-primary-dark:  #1e40af; /* blue-800 */
+  --pc-color-primary-light: #3b82f6; /* blue-500 */
+  --pc-color-primary-ring:  #93c5fd; /* blue-300 */
+
+  /* Cores de superfície (slate Tailwind) */
+  --pc-color-page-bg:    #f8fafc; /* slate-50 */
+  --pc-color-surface:    #ffffff; /* white */
+  --pc-color-surface-2:  #f1f5f9; /* slate-100 */
+  --pc-color-line:       #e2e8f0; /* slate-200 */
+  --pc-color-line-soft:  #cbd5e1; /* slate-300 */
+
+  /* Texto */
+  --pc-color-text:       #0f172a; /* slate-900 */
+  --pc-color-text-soft:  #334155; /* slate-700 */
+  --pc-color-text-muted: #64748b; /* slate-500 */
+  --pc-color-text-faint: #94a3b8; /* slate-400 */
+
+  /* Sidebar (blue) */
+  --pc-color-sidebar-bg:     #2563eb; /* blue-600 */
+  --pc-color-sidebar-border: #1d4ed8; /* blue-700 */
+  --pc-color-sidebar-text:   #eff6ff; /* blue-50 */
+  --pc-color-sidebar-muted:  #bfdbfe; /* blue-200 */
+  --pc-color-sidebar-active: #1d4ed8; /* blue-700 */
+
+  /* Status badges */
+  --pc-color-success:        #10b981; /* emerald-500 */
+  --pc-color-success-bg:     #d1fae5; /* emerald-100 */
+  --pc-color-success-text:   #065f46; /* emerald-800 */
+  --pc-color-warning:        #f59e0b; /* amber-500 */
+  --pc-color-warning-bg:     #fef3c7; /* amber-100 */
+  --pc-color-warning-text:   #92400e; /* amber-800 */
+  --pc-color-error:          #ef4444; /* red-500 */
+  --pc-color-error-bg:       #fee2e2; /* red-100 */
+  --pc-color-error-text:     #991b1b; /* red-800 */
+  --pc-color-neutral-bg:     #f1f5f9; /* slate-100 */
+  --pc-color-neutral-text:   #334155; /* slate-700 */
+
+  /* Radius */
+  --pc-radius-sm:   6px;
+  --pc-radius-md:   8px;
+  --pc-radius-lg:   12px;
+  --pc-radius-xl:   16px;
+  --pc-radius-2xl:  20px;
+  --pc-radius-full: 9999px;
+
+  /* Shadows */
+  --pc-shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --pc-shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+  --pc-shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --pc-shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
+
+  /* Espaçamento */
+  --pc-space-xs: 4px;
+  --pc-space-sm: 8px;
+  --pc-space-md: 16px;
+  --pc-space-lg: 24px;
+  --pc-space-xl: 32px;
+
+  /* Mapeamento --ds-* para compatibilidade com showcase */
+  --ds-font:         var(--pc-font-sans);
+  --ds-font-display: var(--pc-font-sans);
+  --ds-font-mono:    var(--pc-font-mono);
+  --ds-primary:      var(--pc-color-primary);
+  --ds-secondary:    var(--pc-color-primary-hover);
+  --ds-tertiary:     var(--pc-color-success);
+  --ds-alternate:    var(--pc-color-warning);
+  --ds-success:      var(--pc-color-success);
+  --ds-warning:      var(--pc-color-warning);
+  --ds-error:        var(--pc-color-error);
+  --ds-info:         var(--pc-color-primary-light);
+  --ds-text:         var(--pc-color-text);
+  --ds-text-soft:    var(--pc-color-text-soft);
+  --ds-muted:        var(--pc-color-text-muted);
+  --ds-faint:        var(--pc-color-text-faint);
+  --ds-bg:           var(--pc-color-surface);
+  --ds-surface:      var(--pc-color-page-bg);
+  --ds-surface-2:    var(--pc-color-surface-2);
+  --ds-line:         var(--pc-color-line);
+  --ds-line-soft:    var(--pc-color-line-soft);
+  --ds-radius-sm:    var(--pc-radius-sm);
+  --ds-radius:       var(--pc-radius-md);
+  --ds-radius-lg:    var(--pc-radius-lg);
+  --ds-shadow-sm:    var(--pc-shadow-sm);
+  --ds-shadow:       var(--pc-shadow-md);
+  --ds-shadow-lg:    var(--pc-shadow-lg);
+}
+
+/* Dark mode — Tailwind `dark` class strategy */
+.app-dark {
+  --pc-color-page-bg:        #0f172a; /* slate-900 */
+  --pc-color-surface:        #1e293b; /* slate-800 */
+  --pc-color-surface-2:      #334155; /* slate-700 */
+  --pc-color-line:           #334155; /* slate-700 */
+  --pc-color-line-soft:      #475569; /* slate-600 */
+  --pc-color-text:           #f8fafc; /* slate-50 */
+  --pc-color-text-soft:      #e2e8f0; /* slate-200 */
+  --pc-color-text-muted:     #94a3b8; /* slate-400 */
+  --pc-color-text-faint:     #64748b; /* slate-500 */
+  --pc-color-sidebar-bg:     #1e40af; /* blue-800 */
+  --pc-color-sidebar-border: #1d4ed8; /* blue-700 */
+  --pc-color-success-bg:     #022c22;
+  --pc-color-success-text:   #6ee7b7;
+  --pc-color-warning-bg:     #2d1600;
+  --pc-color-warning-text:   #fcd34d;
+  --pc-color-error-bg:       #1f0000;
+  --pc-color-error-text:     #fca5a5;
+  --pc-color-neutral-bg:     #334155;
+  --pc-color-neutral-text:   #cbd5e1;
+}

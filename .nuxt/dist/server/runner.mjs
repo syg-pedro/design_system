@@ -1,1 +1,0 @@
-export { default } from "file:///C:/sygecom/design_system/node_modules/nuxt/node_modules/@nuxt/vite-builder/dist/vite-node-runner.mjs"
