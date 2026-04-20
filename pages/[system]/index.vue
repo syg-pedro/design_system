@@ -81,8 +81,26 @@
           </button>
         </div>
 
+        <!-- SRM tabs -->
+        <template v-if="isSrm">
+          <div v-show="activeTab === 'tokens'" class="ds-section-group">
+            <DsSrmSrmColorPalette />
+          </div>
+          <div v-show="activeTab === 'components'" class="ds-section-group">
+            <DsSrmSrmButtons />
+            <DsSrmSrmBadges />
+            <DsSrmSrmInputs />
+            <DsSrmSrmSegmented />
+            <DsSrmSrmCards />
+          </div>
+          <div v-show="activeTab === 'patterns'" class="ds-section-group">
+            <DsSrmSrmShell />
+            <DsSrmSrmModal />
+          </div>
+        </template>
+
         <!-- ViraVerde tabs -->
-        <template v-if="isViraVerde">
+        <template v-else-if="isViraVerde">
           <div v-show="activeTab === 'tokens'" class="ds-section-group">
             <DsViraverdeVvColorPalette />
             <DsViraverdeVvTypography />
@@ -180,6 +198,7 @@ const ds = computed(() => getDesignSystem(route.params.system as string))
 const isChangelog = computed(() => route.params.system === 'changelog')
 const isPortalContador = computed(() => route.params.system === 'portal-contador')
 const isViraVerde = computed(() => route.params.system === 'viraverde')
+const isSrm = computed(() => route.params.system === 'srm')
 
 const sidebarCollapsed = ref(false)
 const activeTab = ref('tokens')

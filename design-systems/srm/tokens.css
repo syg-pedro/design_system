@@ -1,57 +1,107 @@
+/* ================================================================
+   SRM — Design Tokens  (srm-novo-codigo)
+   Prefixo: --srm-* (dark-first, mesma estratégia do source)
+   Mapeados também como --ds-* para compatibilidade com a showcase
+   ================================================================ */
+
 :root {
-  --ds-font:         "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --ds-font-display: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --ds-font-mono:    "JetBrains Mono", ui-monospace, monospace;
+  /* Tipografia */
+  --srm-font-sans: 'Inter', system-ui, sans-serif;
+  --srm-font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  --ds-primary:         #7c3aed;
-  --ds-secondary:       #5b21b6;
-  --ds-tertiary:        #06b6d4;
-  --ds-alternate:       #f59e0b;
-  --ds-text-on-primary: #ffffff;
+  /* Primárias */
+  --srm-color-primary:      #0099ff;
+  --srm-color-primary-dark: #0077be;
+  --srm-color-primary-soft: rgba(0, 153, 255, 0.1);
+  --srm-color-primary-border: rgba(0, 153, 255, 0.3);
+  --srm-color-icon-glow:    rgba(0, 153, 255, 0.3);
 
-  --ds-success: #10b981;
-  --ds-warning: #f59e0b;
-  --ds-error:   #ef4444;
-  --ds-info:    #3b82f6;
+  /* Dark (padrão — idêntico ao :root do source) */
+  --srm-color-bg:         #0f172a;
+  --srm-color-surface:    #1e293b;
+  --srm-color-text:       #ffffff;
+  --srm-color-text-muted: #aaaaaa;
+  --srm-color-border:     #333333;
+  --srm-color-border-subtle: rgba(255, 255, 255, 0.08);
+  --srm-color-hover:      rgba(255, 255, 255, 0.1);
+  --srm-color-text-label: #cbd5e1;
 
-  --ds-text:      #0f172a;
-  --ds-text-soft: #334155;
-  --ds-muted:     #64748b;
-  --ds-faint:     #94a3b8;
-  --ds-bg:        #ffffff;
-  --ds-surface:   #f8f7ff;
-  --ds-surface-2: #f1f0fe;
-  --ds-line:      #e5e3f5;
-  --ds-line-soft: #eeecfa;
+  /* Status */
+  --srm-color-finalizado:     #4ade80;
+  --srm-color-acompanhamento: #fbbf24;
+  --srm-color-pendente:       #f87171;
+  --srm-color-vencido:        #ef4444;
 
-  --ds-radius-sm: 8px;
-  --ds-radius:    12px;
-  --ds-radius-lg: 16px;
-  --ds-radius-xl: 22px;
+  /* Semânticas */
+  --srm-color-success:      #10b981;
+  --srm-color-success-soft: rgba(16, 185, 129, 0.1);
+  --srm-color-warning:      #f59e0b;
+  --srm-color-warning-soft: rgba(245, 158, 11, 0.1);
+  --srm-color-danger:       #ef4444;
+  --srm-color-danger-soft:  rgba(239, 68, 68, 0.1);
 
-  --ds-shadow-sm: 0 1px 2px rgba(124, 58, 237, 0.05);
-  --ds-shadow:    0 1px 3px rgba(124, 58, 237, 0.06), 0 8px 24px -8px rgba(124, 58, 237, 0.10);
-  --ds-shadow-lg: 0 1px 3px rgba(124, 58, 237, 0.06), 0 24px 48px -18px rgba(124, 58, 237, 0.20);
-  --ds-ring:      0 0 0 3px color-mix(in srgb, var(--ds-primary) 22%, transparent);
+  /* Sidebar (primária azul sólida) */
+  --srm-sidebar-bg: var(--srm-color-primary);
+  --srm-sidebar-w:  64px;
+  --srm-sidebar-w-expanded: 248px;
 
-  --ds-sidebar-w:          72px;
-  --ds-sidebar-w-expanded: 248px;
-  --ds-min-touch:          40px;
-  --ds-transition:         0.22s cubic-bezier(.4,.0,.2,1);
-  --ds-transition-fast:    0.15s cubic-bezier(.4,.0,.2,1);
+  /* Layout */
+  --srm-header-height: 60px;
+  --srm-radius-sm:  4px;
+  --srm-radius-md:  6px;
+  --srm-radius-lg:  8px;
+  --srm-radius-xl:  12px;
+  --srm-transition: 0.2s ease;
+  --srm-transition-slow: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* ── --ds-* aliases (showcase — dark default) ── */
+  --ds-primary:   var(--srm-color-primary);
+  --ds-secondary: var(--srm-color-primary-dark);
+  --ds-tertiary:  var(--srm-color-finalizado);
+  --ds-alternate: var(--srm-color-acompanhamento);
+  --ds-success:   var(--srm-color-success);
+  --ds-warning:   var(--srm-color-warning);
+  --ds-error:     var(--srm-color-danger);
+  --ds-info:      #3b82f6;
+
+  --ds-text:       var(--srm-color-text);
+  --ds-text-soft:  var(--srm-color-text-label);
+  --ds-muted:      var(--srm-color-text-muted);
+  --ds-faint:      var(--srm-color-border);
+
+  --ds-bg:        var(--srm-color-bg);
+  --ds-surface:   var(--srm-color-surface);
+  --ds-surface-2: color-mix(in srgb, var(--srm-color-surface) 70%, var(--srm-color-bg));
+  --ds-line:      var(--srm-color-border);
+  --ds-line-soft: var(--srm-color-border-subtle);
+
+  --ds-font: var(--srm-font-sans);
 }
 
+/* Light override — mesma estratégia do source via [data-theme="light"] */
 .app-dark {
-  color-scheme: dark;
-  --ds-text:      #e2e8f0;
-  --ds-text-soft: #cbd5e1;
-  --ds-muted:     #94a3b8;
-  --ds-faint:     #64748b;
-  --ds-bg:        #0d0b1a;
-  --ds-surface:   #080614;
-  --ds-surface-2: #110e26;
-  --ds-line:      #1e1a36;
-  --ds-line-soft: #16122e;
-  --ds-shadow:    0 1px 3px rgba(0,0,0,0.4), 0 8px 24px -8px rgba(0,0,0,0.5);
-  --ds-shadow-lg: 0 1px 3px rgba(0,0,0,0.4), 0 24px 48px -18px rgba(0,0,0,0.6);
+  /* Em modo escuro o showcase, SRM usa os tokens dark acima — nada muda */
+}
+
+/* Quando o showcase está em modo claro, adaptar SRM */
+:not(.app-dark) {
+  --srm-color-bg:           #f5f7fa;
+  --srm-color-surface:      #ffffff;
+  --srm-color-text:         #333333;
+  --srm-color-text-muted:   #666666;
+  --srm-color-border:       #e0e0e0;
+  --srm-color-border-subtle: rgba(0, 0, 0, 0.08);
+  --srm-color-hover:        rgba(0, 0, 0, 0.05);
+  --srm-color-text-label:   #64748b;
+  --srm-color-primary-soft: rgba(0, 153, 255, 0.05);
+
+  --ds-text:       var(--srm-color-text);
+  --ds-text-soft:  var(--srm-color-text-label);
+  --ds-muted:      var(--srm-color-text-muted);
+  --ds-faint:      var(--srm-color-border);
+  --ds-bg:         var(--srm-color-bg);
+  --ds-surface:    var(--srm-color-surface);
+  --ds-surface-2:  #f1f5f9;
+  --ds-line:       var(--srm-color-border);
+  --ds-line-soft:  var(--srm-color-border-subtle);
 }
