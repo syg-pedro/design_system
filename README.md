@@ -10,6 +10,7 @@ Showcase multi-sistema dos design systems Sygecom. Nuxt 3 + Vue 3, empacotado pa
 | `srm` | SRM | `#7c3aed` | Vue 3 |
 | `changelog` | Changelog | `#79b83e` | Nuxt / Vue 3, `--ff-*` tokens |
 | `portal-contador` | Portal do Contador | `#2563eb` | Vue 3 + Tailwind |
+| `viraverde` | ViraVerde | `#16a34a` | Vue 3 + Tailwind |
 
 ## Requisitos
 

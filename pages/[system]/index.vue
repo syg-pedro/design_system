@@ -81,8 +81,27 @@
           </button>
         </div>
 
+        <!-- ViraVerde tabs -->
+        <template v-if="isViraVerde">
+          <div v-show="activeTab === 'tokens'" class="ds-section-group">
+            <DsViraverdeVvColorPalette />
+            <DsViraverdeVvTypography />
+          </div>
+          <div v-show="activeTab === 'components'" class="ds-section-group">
+            <DsViraverdeVvButtons />
+            <DsViraverdeVvBadges />
+            <DsViraverdeVvInputs />
+          </div>
+          <div v-show="activeTab === 'patterns'" class="ds-section-group">
+            <DsViraverdeVvShell />
+            <DsViraverdeVvTabs />
+            <DsViraverdeVvTable />
+            <DsViraverdeVvModal />
+          </div>
+        </template>
+
         <!-- Portal do Contador tabs -->
-        <template v-if="isPortalContador">
+        <template v-else-if="isPortalContador">
           <div v-show="activeTab === 'tokens'" class="ds-section-group">
             <DsPortalContadorPcColorPalette />
             <DsPortalContadorPcTypography />
@@ -160,6 +179,7 @@ const { darkMode, toggleDark } = useDesignSystem()
 const ds = computed(() => getDesignSystem(route.params.system as string))
 const isChangelog = computed(() => route.params.system === 'changelog')
 const isPortalContador = computed(() => route.params.system === 'portal-contador')
+const isViraVerde = computed(() => route.params.system === 'viraverde')
 
 const sidebarCollapsed = ref(false)
 const activeTab = ref('tokens')

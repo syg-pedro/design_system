@@ -1,0 +1,101 @@
+/* ================================================================
+   ViraVerde — Design Tokens
+   Prefixo: --vv-* (derivado do Tailwind green/gray palette)
+   Mapeados também como --ds-* para compatibilidade com a showcase
+   ================================================================ */
+
+:root {
+  /* Tipografia */
+  --vv-font-sans: 'Inter', system-ui, sans-serif;
+  --vv-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Cores primárias (green Tailwind) */
+  --vv-color-primary:       #16a34a; /* green-600 */
+  --vv-color-primary-hover: #15803d; /* green-700 */
+  --vv-color-primary-dark:  #166534; /* green-800 */
+  --vv-color-primary-light: #22c55e; /* green-500 */
+  --vv-color-primary-ring:  #86efac; /* green-300 */
+  --vv-color-primary-bg:    #f0fdf4; /* green-50 */
+  --vv-color-primary-100:   #dcfce7; /* green-100 */
+
+  /* Brand greens */
+  --vv-color-brand:       #2E7D32;
+  --vv-color-brand-light: #4CAF50;
+  --vv-color-brand-dark:  #1B5E20;
+
+  /* Cores de superfície (gray Tailwind) */
+  --vv-color-page-bg:   #f9fafb; /* gray-50 */
+  --vv-color-surface:   #ffffff; /* white */
+  --vv-color-surface-2: #f3f4f6; /* gray-100 */
+  --vv-color-line:      #e5e7eb; /* gray-200 */
+  --vv-color-line-soft: #d1d5db; /* gray-300 */
+
+  /* Texto */
+  --vv-color-text:       #111827; /* gray-900 */
+  --vv-color-text-soft:  #374151; /* gray-700 */
+  --vv-color-text-muted: #6b7280; /* gray-500 */
+  --vv-color-text-faint: #9ca3af; /* gray-400 */
+
+  /* Sidebar (white + green accent) */
+  --vv-color-sidebar-bg:     #ffffff;
+  --vv-color-sidebar-border: #e5e7eb; /* gray-200 */
+  --vv-color-sidebar-text:   #374151; /* gray-700 */
+  --vv-color-sidebar-muted:  #6b7280; /* gray-500 */
+  --vv-color-sidebar-active-bg:   #f0fdf4; /* green-50 */
+  --vv-color-sidebar-active-text: #15803d; /* green-700 */
+
+  /* Status / semantic */
+  --vv-color-success:      #16a34a; /* green-600 */
+  --vv-color-success-bg:   #dcfce7; /* green-100 */
+  --vv-color-success-text: #166534; /* green-800 */
+  --vv-color-warning:      #d97706; /* amber-600 */
+  --vv-color-warning-bg:   #fef3c7; /* amber-100 */
+  --vv-color-warning-text: #92400e; /* amber-800 */
+  --vv-color-error:        #dc2626; /* red-600 */
+  --vv-color-error-bg:     #fee2e2; /* red-100 */
+  --vv-color-error-text:   #991b1b; /* red-800 */
+  --vv-color-info:         #2563eb; /* blue-600 */
+  --vv-color-info-bg:      #dbeafe; /* blue-100 */
+  --vv-color-info-text:    #1e40af; /* blue-800 */
+  --vv-color-neutral-bg:   #f3f4f6; /* gray-100 */
+  --vv-color-neutral-text: #374151; /* gray-700 */
+
+  /* Radius */
+  --vv-radius-sm:   4px;
+  --vv-radius-md:   8px;
+  --vv-radius-lg:   10px;
+  --vv-radius-xl:   12px;
+  --vv-radius-2xl:  16px;
+  --vv-radius-full: 9999px;
+
+  /* Shadows */
+  --vv-shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --vv-shadow:    0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --vv-shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --vv-shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+  --vv-shadow-xl: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
+
+  /* Transitions */
+  --vv-transition: 150ms ease;
+
+  /* ── --ds-* aliases (showcase compatibility) ── */
+  --ds-primary:   var(--vv-color-primary);
+  --ds-secondary: var(--vv-color-primary-hover);
+  --ds-tertiary:  var(--vv-color-primary-light);
+  --ds-alternate: var(--vv-color-warning);
+  --ds-success:   var(--vv-color-success);
+  --ds-warning:   var(--vv-color-warning);
+  --ds-error:     var(--vv-color-error);
+  --ds-info:      var(--vv-color-info);
+
+  --ds-text:       var(--vv-color-text);
+  --ds-text-soft:  var(--vv-color-text-soft);
+  --ds-muted:      var(--vv-color-text-muted);
+  --ds-faint:      var(--vv-color-text-faint);
+
+  --ds-bg:        var(--vv-color-page-bg);
+  --ds-surface:   var(--vv-color-surface);
+  --ds-surface-2: var(--vv-color-surface-2);
+  --ds-line:      var(--vv-color-line);
+  --ds-line-soft: var(--vv-color-line-soft);
+}

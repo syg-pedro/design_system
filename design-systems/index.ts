@@ -2,6 +2,7 @@ import { logverdeConfig } from './logverde/config'
 import { srmConfig } from './srm/config'
 import { changelogConfig } from './changelog/config'
 import { portalContadorConfig } from './portal-contador/config'
+import { viraverdeConfig } from './viraverde/config'
 import type { DesignSystemConfig } from './types'
 
 export const designSystems: DesignSystemConfig[] = [
@@ -9,6 +10,7 @@ export const designSystems: DesignSystemConfig[] = [
   srmConfig,
   changelogConfig,
   portalContadorConfig,
+  viraverdeConfig,
 ]
 
 export function getDesignSystem(id: string): DesignSystemConfig | undefined {
