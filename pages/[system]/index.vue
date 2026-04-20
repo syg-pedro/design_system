@@ -53,6 +53,16 @@
           <strong>{{ ds.name }}</strong>
         </div>
         <div class="ds-header-actions">
+          <button
+            class="icon-btn export-btn"
+            :class="{ loading: isExporting }"
+            :disabled="isExporting"
+            title="Exportar documentação em Markdown"
+            @click="exportMarkdown(ds!)"
+          >
+            <span v-if="isExporting" class="export-spinner"></span>
+            <i v-else class="pi pi-download"></i>
+          </button>
           <button class="icon-btn" @click="toggleDark" :title="darkMode ? 'Modo claro' : 'Modo escuro'">
             <i :class="darkMode ? 'pi pi-sun' : 'pi pi-moon'"></i>
           </button>
@@ -209,6 +219,7 @@ import { getDesignSystem } from '~/design-systems/index'
 
 const route = useRoute()
 const { darkMode, toggleDark } = useDesignSystem()
+const { exportMarkdown, isExporting } = useMarkdownExport()
 
 const ds = computed(() => getDesignSystem(route.params.system as string))
 const isChangelog = computed(() => route.params.system === 'changelog')
@@ -388,6 +399,18 @@ watch([darkMode, isChangelog], ([dark, isCl]) => {
   transition: all 0.15s ease;
 }
 .icon-btn:hover { background: var(--ds-surface-2); color: var(--ds-text); }
+
+.export-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.export-btn:not(:disabled):hover { color: var(--ds-primary, #0094d9); border-color: var(--ds-primary, #0094d9); }
+@keyframes spin { to { transform: rotate(360deg); } }
+.export-spinner {
+  width: 14px; height: 14px;
+  border: 2px solid var(--ds-line, #e5e9f0);
+  border-top-color: var(--ds-primary, #0094d9);
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  display: block;
+}
 
 /* Content */
 .ds-main { min-width: 0; }
