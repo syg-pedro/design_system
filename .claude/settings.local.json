@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(gunzip -c \"C:/Users/PedroVictordeOliveir/.claude/projects/C--sygecom-design-system/f96bb9e2-8d64-4092-a24d-b5c81e959459/tool-results/webfetch-1776714979863-vrcfnx.bin\")",
+      "Bash(tar -tv)",
+      "Bash(tar -xO \"design-system-logverde/chats/chat1.md\")",
+      "Bash(tar -xO \"design-system-logverde/project/LogVerde Design v2.html\")",
+      "Bash(tar -xO \"design-system-logverde/project/fonts/Geist-VariableFont_wght.ttf\")",
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(npm install *)",
+      "Bash(npx nuxi *)",
+      "Bash(curl -s http://localhost:3030/)",
+      "Bash(curl -s http://localhost:3030/logverde)",
+      "Bash(cp /c/sygecom/changelog_repo/apps/web/app/components/ui/AppButton.vue /c/sygecom/design_system/design-systems/changelog/components/)",
+      "Bash(cp /c/sygecom/changelog_repo/apps/web/app/components/ui/AppBadge.vue /c/sygecom/design_system/design-systems/changelog/components/)",
+      "Bash(cp /c/sygecom/changelog_repo/apps/web/app/components/ui/AppTextInput.vue /c/sygecom/design_system/design-systems/changelog/components/)",
+      "Bash(cp /c/sygecom/changelog_repo/apps/web/app/components/ui/AppDropdown.vue /c/sygecom/design_system/design-systems/changelog/components/)",
+      "Bash(cp /c/sygecom/changelog_repo/apps/web/app/components/ui/AppChoiceChips.vue /c/sygecom/design_system/design-systems/changelog/components/)",
+      "Bash(git clone *)"
+    ]
+  }
+}

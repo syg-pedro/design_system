@@ -1,0 +1,95 @@
+:root {
+  --ff-font-family: "Source Sans 3", "Segoe UI", sans-serif;
+
+  --ff-color-primary: #0094d9;
+  --ff-color-secondary: #0066b2;
+  --ff-color-tertiary: #79b83e;
+  --ff-color-alternate: #f3943d;
+  --ff-color-primary-text: #3c3c3c;
+  --ff-color-secondary-text: #979ca3;
+  --ff-color-primary-bg: #ffffff;
+  --ff-color-secondary-bg: #f8f8f8;
+  --ff-color-accent-1: #616161;
+  --ff-color-accent-2: #757575;
+  --ff-color-accent-3: #e0e0e0;
+  --ff-color-accent-4: #fcfcfc;
+  --ff-color-success: #3dac00;
+  --ff-color-warning: #ffb11d;
+  --ff-color-error: #ff1414;
+  --ff-color-info: #1c4494;
+  --ff-color-line: #eeeeee;
+  --ff-color-white: #ffffff;
+  --ff-color-black: #000000;
+  --ff-color-bg-success: #d7ffc5;
+  --ff-color-bg-error: #ffd9d9;
+  --ff-color-bg-warning: #ffeec7;
+  --ff-color-bg-info: #ceedff;
+  --ff-color-sub-primary: #d8edff;
+  --ff-color-sub-secondary: #cfebff;
+  --ff-color-sub-tertiary: #e7ffcf;
+  --ff-color-sub-alternate: #ffecdc;
+
+  --ff-space-xs: 4px;
+  --ff-space-sm: 8px;
+  --ff-space-md: 16px;
+  --ff-space-lg: 24px;
+  --ff-space-xl: 32px;
+
+  --ff-radius-sm: 8px;
+  --ff-radius-md: 16px;
+  --ff-radius-lg: 24px;
+  --ff-radius-full: 9999px;
+
+  --ff-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --ff-shadow-md: 0 3px 6px rgba(0, 0, 0, 0.1);
+  --ff-shadow-lg: 0 8px 15px rgba(0, 0, 0, 0.1);
+  --ff-shadow-xl: 0 16px 25px rgba(0, 0, 0, 0.1);
+
+  --ff-content-max: 1400px;
+  --ff-breakpoint-small: 479px;
+  --ff-breakpoint-medium: 767px;
+  --ff-breakpoint-large: 991px;
+
+  --ff-text-display-large: 57px;
+  --ff-text-display-medium: 45px;
+  --ff-text-display-small: 36px;
+  --ff-text-headline-large: 32px;
+  --ff-text-headline-medium: 28px;
+  --ff-text-headline-small: 24px;
+  --ff-text-title-large: 22px;
+  --ff-text-title-medium: 20px;
+  --ff-text-title-small: 18px;
+  --ff-text-body: 14px;
+  --ff-text-label: 12px;
+}
+
+[data-theme="dark"] {
+  --ff-color-primary: #0094d9;
+  --ff-color-secondary: #0066b2;
+  --ff-color-tertiary: #79b83e;
+  --ff-color-alternate: #f3943d;
+  --ff-color-primary-text: #ffffff;
+  --ff-color-secondary-text: #95a1ac;
+  --ff-color-primary-bg: #0c1319;
+  --ff-color-secondary-bg: #1a2329;
+  --ff-color-accent-1: #eeeeee;
+  --ff-color-accent-2: #e0e0e0;
+  --ff-color-accent-3: #2b363e;
+  --ff-color-accent-4: #111619;
+  --ff-color-success: #3dac00;
+  --ff-color-warning: #ffb11d;
+  --ff-color-error: #ff1414;
+  --ff-color-info: #1c4494;
+  --ff-color-line: #22282f;
+  --ff-color-white: #ffffff;
+  --ff-color-black: #000000;
+  --ff-color-bg-success: #0d1a00;
+  --ff-color-bg-error: #1d0000;
+  --ff-color-bg-warning: #201100;
+  --ff-color-bg-info: #000c20;
+  --ff-color-sub-primary: #00212d;
+  --ff-color-sub-secondary: #00111f;
+  --ff-color-sub-tertiary: #183100;
+  --ff-color-sub-alternate: #4f2800;
+}
+
