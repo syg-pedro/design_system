@@ -18,7 +18,11 @@
       "Bash(cp /c/sygecom/changelog_repo/apps/web/app/components/ui/AppTextInput.vue /c/sygecom/design_system/design-systems/changelog/components/)",
       "Bash(cp /c/sygecom/changelog_repo/apps/web/app/components/ui/AppDropdown.vue /c/sygecom/design_system/design-systems/changelog/components/)",
       "Bash(cp /c/sygecom/changelog_repo/apps/web/app/components/ui/AppChoiceChips.vue /c/sygecom/design_system/design-systems/changelog/components/)",
-      "Bash(git clone *)"
+      "Bash(git clone *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(git commit *)"
     ]
   }
 }
