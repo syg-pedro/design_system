@@ -10,21 +10,26 @@
         </div>
       </div>
 
-      <nav class="ds-nav">
-        <button
-          v-for="tab in tabs"
-          :key="tab.id"
-          class="ds-nav-link"
-          :class="{ active: activeTab === tab.id }"
-          @click="activeTab = tab.id"
-        >
-          <i :class="`pi ${tab.icon}`"></i>
-          <span v-if="!sidebarCollapsed">{{ tab.label }}</span>
-        </button>
-      </nav>
+      <div class="ds-nav-section">
+        <span v-if="!sidebarCollapsed" class="ds-nav-label">Navegação</span>
+        <nav class="ds-nav">
+          <button
+            v-for="tab in tabs"
+            :key="tab.id"
+            class="ds-nav-link"
+            :class="{ active: activeTab === tab.id }"
+            @click="activeTab = tab.id"
+          >
+            <i :class="`pi ${tab.icon}`"></i>
+            <span v-if="!sidebarCollapsed">{{ tab.label }}</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="ds-sidebar-spacer"></div>
 
       <div class="ds-sidebar-footer">
-        <NuxtLink to="/" class="ds-nav-link">
+        <NuxtLink to="/" class="ds-nav-link ds-nav-link--back">
           <i class="pi pi-arrow-left"></i>
           <span v-if="!sidebarCollapsed">Todos os sistemas</span>
         </NuxtLink>
@@ -198,71 +203,107 @@ watch([darkMode, isChangelog], ([dark, isCl]) => {
 .ds-shell {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 248px minmax(0, 1fr);
+  grid-template-columns: 252px minmax(0, 1fr);
   background: var(--ds-surface, #f6f8fb);
   color: var(--ds-text, #0f172a);
   font-family: var(--ds-font, "Geist", sans-serif);
   transition: grid-template-columns 0.22s ease;
 }
 .ds-shell:has(.ds-sidebar.collapsed) {
-  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-columns: 68px minmax(0, 1fr);
 }
 
 /* Sidebar */
 .ds-sidebar {
   position: sticky; top: 0; height: 100vh;
   display: flex; flex-direction: column;
-  padding: 1.25rem 0.85rem;
+  padding: 0;
   background: var(--ds-bg, #fff);
   border-right: 1px solid var(--ds-line, #e5e9f0);
   overflow: hidden;
-  transition: padding 0.22s ease;
+  transition: width 0.22s ease;
 }
-.ds-sidebar.collapsed { padding-inline: 0.5rem; }
 
+/* Brand */
 .ds-brand {
-  display: flex; align-items: center; gap: 0.6rem;
-  margin-bottom: 1.5rem; padding: 0.35rem 0.55rem;
-  min-height: 48px;
+  display: flex; align-items: center; gap: 0.65rem;
+  padding: 1.1rem 1rem 1rem;
+  border-bottom: 1px solid var(--ds-line, #e5e9f0);
+  min-height: 64px; flex-shrink: 0;
 }
 .ds-logo {
-  width: 34px; height: 34px; flex: 0 0 auto;
+  width: 36px; height: 36px; flex: 0 0 36px;
   display: grid; place-items: center;
   color: #fff; border-radius: 10px;
   font-weight: 700; font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
 }
-.ds-brand-text strong { display: block; font-size: 1.1rem; font-weight: 700; line-height: 1.2; color: var(--ds-text); }
-.ds-brand-text small  { font-size: 0.68rem; color: var(--ds-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.ds-brand-text { min-width: 0; }
+.ds-brand-text strong { display: block; font-size: 0.95rem; font-weight: 700; line-height: 1.25; color: var(--ds-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ds-brand-text small  { font-size: 0.62rem; color: var(--ds-muted); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
 
-.ds-nav { display: grid; gap: 0.15rem; flex: 1; }
+/* Nav section */
+.ds-nav-section { padding: 1.25rem 0.75rem 0.5rem; }
+.ds-nav-label {
+  display: block; font-size: 0.62rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--ds-faint); padding: 0 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.ds-nav { display: flex; flex-direction: column; gap: 0.2rem; }
+
 .ds-nav-link {
-  display: flex; align-items: center; gap: 0.7rem;
-  min-height: 40px; padding: 0.55rem 0.75rem;
-  border: 0; border-radius: 10px;
+  display: flex; align-items: center; gap: 0.65rem;
+  height: 40px; padding: 0 0.75rem;
+  border: 0; border-radius: 9px;
   background: transparent; color: var(--ds-text-soft, #334155);
   cursor: pointer; text-align: left;
-  font: inherit; font-size: 0.88rem; font-weight: 500;
-  transition: all 0.15s ease;
-  text-decoration: none;
+  font: inherit; font-size: 0.875rem; font-weight: 500;
+  transition: background 0.13s, color 0.13s;
+  text-decoration: none; position: relative;
+  white-space: nowrap; overflow: hidden;
 }
-.ds-nav-link i { font-size: 1rem; width: 1.1rem; flex-shrink: 0; color: var(--ds-faint); transition: color 0.15s; }
+.ds-nav-link i { font-size: 0.95rem; width: 1rem; flex-shrink: 0; color: var(--ds-faint); transition: color 0.13s; }
 .ds-nav-link:hover { background: var(--ds-surface-2); color: var(--ds-text); }
 .ds-nav-link:hover i { color: var(--ds-primary); }
-.ds-nav-link.active { background: color-mix(in srgb, var(--ds-primary, #0094d9) 10%, transparent); color: var(--ds-primary); font-weight: 600; }
-.ds-nav-link.active i { color: var(--ds-primary); }
-.ds-sidebar.collapsed .ds-nav-link { justify-content: center; padding-inline: 0.4rem; }
-.ds-sidebar.collapsed .ds-nav-link span { display: none; }
-
-.ds-sidebar-footer {
-  margin-top: auto;
-  border-top: 1px solid var(--ds-line-soft);
-  padding-top: 0.75rem;
-  display: grid; gap: 0.15rem;
+.ds-nav-link.active {
+  background: color-mix(in srgb, var(--ds-primary, #0094d9) 12%, transparent);
+  color: var(--ds-primary); font-weight: 600;
 }
+.ds-nav-link.active i { color: var(--ds-primary); }
+.ds-nav-link.active::before {
+  content: ""; position: absolute; left: 0; top: 20%; bottom: 20%;
+  width: 3px; border-radius: 0 3px 3px 0;
+  background: var(--ds-primary);
+}
+
+/* Collapsed sidebar */
+.ds-sidebar.collapsed { }
+.ds-sidebar.collapsed .ds-brand { justify-content: center; padding-inline: 0; }
+.ds-sidebar.collapsed .ds-brand-text { display: none; }
+.ds-sidebar.collapsed .ds-nav-section { padding-inline: 0.5rem; }
+.ds-sidebar.collapsed .ds-nav-label { display: none; }
+.ds-sidebar.collapsed .ds-nav-link { justify-content: center; padding-inline: 0; }
+.ds-sidebar.collapsed .ds-nav-link span { display: none; }
+.ds-sidebar.collapsed .ds-nav-link.active::before { display: none; }
+
+/* Spacer */
+.ds-sidebar-spacer { flex: 1; }
+
+/* Footer */
+.ds-sidebar-footer {
+  border-top: 1px solid var(--ds-line-soft);
+  padding: 0.75rem;
+  display: flex; flex-direction: column; gap: 0.15rem; flex-shrink: 0;
+}
+.ds-nav-link--back { color: var(--ds-muted); font-size: 0.82rem; }
+.ds-nav-link--back i { color: var(--ds-faint); }
+.ds-nav-link--back:hover { color: var(--ds-text); }
+
 .ds-version {
   display: flex; align-items: center; gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  color: var(--ds-faint); font-size: 0.7rem;
+  padding: 0.3rem 0.75rem;
+  color: var(--ds-faint); font-size: 0.68rem;
 }
 .ds-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ds-success, #3dac00); flex-shrink: 0; }
 
